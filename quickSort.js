@@ -8,10 +8,10 @@ worst: O(n^2)
 */
 
 
-function quicksort(arr) {
+function quickSort(arr) {
   // Base case
-  if (arr.length === 0) {
-    return [];
+  if (arr.length < 2) {
+    return arr;
   }
   var left = [], right = [], pivot = arr[0];
 
@@ -25,5 +25,5 @@ function quicksort(arr) {
   }
 
   // Quick sort each subarray
-  return quicksort(left).concat(pivot, quicksort(right));
+  return quickSort(left).concat(pivot, quickSort(right));
 }
